@@ -1,0 +1,79 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Assets/Font.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Assets/title.png" type="Texture" id=2]
+[ext_resource path="res://src/UI/Quit.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/UI/Play.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/UI/Retry.tscn" type="PackedScene" id=5]
+[ext_resource path="res://src/UI/UserInterface.gd" type="Script" id=6]
+
+[node name="UserInterface" type="Control"]
+pause_mode = 2
+light_mask = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Pause Overlay" type="ColorRect" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.243137 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="title" type="Sprite" parent="Pause Overlay"]
+position = Vector2( 521.474, 99.1372 )
+texture = ExtResource( 2 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Pause Overlay"]
+anchor_left = 0.382
+anchor_top = 0.347
+anchor_right = 0.649
+anchor_bottom = 0.46
+margin_left = -0.16803
+margin_top = -0.199997
+margin_right = 0.42395
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Retry" parent="Pause Overlay/VBoxContainer" instance=ExtResource( 5 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 274.0
+margin_bottom = 20.0
+
+[node name="Play" parent="Pause Overlay/VBoxContainer" instance=ExtResource( 4 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 24.0
+margin_right = 274.0
+margin_bottom = 44.0
+text = "Main Screen"
+next_scene_path = "res://src/UI/Home_Screen.tscn"
+
+[node name="Quit" parent="Pause Overlay/VBoxContainer" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 48.0
+margin_right = 274.0
+margin_bottom = 68.0
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -155.777
+margin_top = 61.1045
+margin_right = -74.777
+margin_bottom = 82.1045
+custom_fonts/font = ExtResource( 1 )
+text = "Score: %s"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}

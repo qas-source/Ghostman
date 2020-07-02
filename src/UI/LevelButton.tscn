@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://src/UI/LevelButton.gd" type="Script" id=1]
+
+[node name="Level" type="Button"]
+anchor_right = 0.099
+anchor_bottom = 0.15
+margin_right = -0.376007
+disabled = true
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
